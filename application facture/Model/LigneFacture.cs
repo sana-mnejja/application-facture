@@ -13,21 +13,13 @@ namespace application_facture.Model
         public int Id { get; set; }
         public string Produit { get; set; }
         public int Quantite { get; set; }
-        public double PrixUnitaire { get; set; }
+        public string  Unite { get; set; }
+        public double PrixUnitaireTTC { get; set; }
+        public double MontantTTC { get; set; }
+        public string MontantString { get; set; }
 
-      
 
-        // Méthode pour calculer le montant de cette ligne
-        public double Montant()
-        {
-            return Quantite * PrixUnitaire;
-        }
-        // Constructeur
-        public LigneFacture(string produit, int quantite, double prixUnitaire)
-        {
-            Produit = produit;
-            Quantite = quantite;
-            PrixUnitaire = prixUnitaire;
-        }
+       
+       
     }
 }

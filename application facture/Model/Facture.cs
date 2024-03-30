@@ -29,21 +29,8 @@ namespace application_facture.Model
             Lignes = new List<LigneFacture>();
         }
 
-        // Méthode pour ajouter une ligne à la facture
-        public void AjouterLigne(string produit, int quantite, double prixUnitaire)
-        {
-            Lignes.Add(new LigneFacture(produit, quantite, prixUnitaire));
-        }
+       
 
-        // Méthode pour calculer le montant total de la facture
-        public double CalculerMontantTotal()
-        {
-            double total = 0;
-            foreach (var ligne in Lignes)
-            {
-                total += ligne.Montant();
-            }
-            return total;
-        }
+        
     }
 }
