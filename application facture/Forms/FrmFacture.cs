@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using application_facture.Rapport;
 using DevExpress.XtraReports.UI;
 using application_facture.Model;
+using DevExpress.XtraGrid.Views.Grid;
 namespace application_facture.Forms
 {
     public partial class FrmFacture : DevExpress.XtraEditors.XtraForm
@@ -51,16 +52,49 @@ namespace application_facture.Forms
 
         private void BtnFacture_Click(object sender, EventArgs e)
         {
-            
+
+            List<LigneFacture> listeLignesFacture = new List<LigneFacture>();
+
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                // Create a new LigneFacture object for each iteration
+                LigneFacture ligneFacture = new LigneFacture();
+
+                // Obtain the value of the "Produit" column for the current row
+                object produitValue = gridView1.GetRowCellValue(i, "Produit");
+                // Cast the value of the "Quantite" column to an int
+                int QuantiteValue = (int)gridView1.GetRowCellValue(i, "Quantite");
+                // Retrieve the value of the "Unite" column
+                object Unite = gridView1.GetRowCellValue(i,"Unite");
+                // Cast the value of the "PrixUnitaireTTC" column to a double
+                double PrixUnitaireTTC = (double)gridView1.GetRowCellValue(i, "PrixUnitaireTTC");
+                // Calculate the total amount including tax
+                double MontantTTC = QuantiteValue * PrixUnitaireTTC;
+
+                // Assign values to properties of the LigneFacture object
+                ligneFacture.Produit = produitValue.ToString();
+                ligneFacture.Quantite = QuantiteValue;
+                ligneFacture.Unite = Unite.ToString(); ;
+                ligneFacture.PrixUnitaireTTC = PrixUnitaireTTC;
+                ligneFacture.MontantTTC = MontantTTC;
+
+                // Add the LigneFacture object to the list
+                listeLignesFacture.Add(ligneFacture);
+            }
+
+
+
+
+
 
             RapportFacture RapportF = new RapportFacture();
 
 
-            List<Facture> Listefacture = new List<Facture>();
+            
 
             RapportF.Parameters["Client"].Value = TxtClient.Text;
             RapportF.Parameters["dateemission"].Value = DateTime.Now;
-            RapportF.DataSource = Listefacture;
+            RapportF.DataSource = listeLignesFacture;
 
             ReportPrintTool tool = new ReportPrintTool(RapportF);
             tool.ShowPreview();

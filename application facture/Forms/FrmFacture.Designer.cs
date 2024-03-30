@@ -49,7 +49,6 @@
             this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUnite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaireTTC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MontantTotalTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -142,7 +141,7 @@
             // 
             this.BtnFacture.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFacture.Appearance.Options.UseFont = true;
-            this.BtnFacture.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.BtnFacture.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnFacture.ImageOptions.Image")));
             this.BtnFacture.Location = new System.Drawing.Point(16, 47);
             this.BtnFacture.Name = "BtnFacture";
             this.BtnFacture.Size = new System.Drawing.Size(248, 40);
@@ -231,8 +230,7 @@
             this.colProduit,
             this.colQuantite,
             this.colUnite,
-            this.colPrixUnitaireTTC,
-            this.MontantTotalTTC});
+            this.colPrixUnitaireTTC});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -271,14 +269,6 @@
             this.colPrixUnitaireTTC.Name = "colPrixUnitaireTTC";
             this.colPrixUnitaireTTC.Visible = true;
             this.colPrixUnitaireTTC.VisibleIndex = 3;
-            // 
-            // MontantTotalTTC
-            // 
-            this.MontantTotalTTC.Caption = "Montant(TTC)";
-            this.MontantTotalTTC.FieldName = "MontantTTC";
-            this.MontantTotalTTC.Name = "MontantTotalTTC";
-            this.MontantTotalTTC.Visible = true;
-            this.MontantTotalTTC.VisibleIndex = 4;
             // 
             // layoutControlGroup3
             // 
@@ -408,7 +398,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUnite;
         private DevExpress.XtraGrid.Columns.GridColumn colPrixUnitaireTTC;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraGrid.Columns.GridColumn MontantTotalTTC;
         private DevExpress.XtraEditors.SimpleButton BtnFacture;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
