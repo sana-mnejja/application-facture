@@ -12,6 +12,11 @@ using application_facture.Rapport;
 using DevExpress.XtraReports.UI;
 using application_facture.Model;
 using DevExpress.XtraGrid.Views.Grid;
+using Convertisseur;
+using Convertisseur.Entite;
+using DevExpress.XtraPrinting;
+using System.IO;
+
 namespace application_facture.Forms
 {
     public partial class FrmFacture : DevExpress.XtraEditors.XtraForm
@@ -67,9 +72,9 @@ namespace application_facture.Forms
                 // Retrieve the value of the "Unite" column
                 object Unite = gridView1.GetRowCellValue(i,"Unite");
                 // Cast the value of the "PrixUnitaireTTC" column to a double
-                double PrixUnitaireTTC = (double)gridView1.GetRowCellValue(i, "PrixUnitaireTTC");
+                decimal PrixUnitaireTTC = (decimal)gridView1.GetRowCellValue(i, "PrixUnitaireTTC");
                 // Calculate the total amount including tax
-                double MontantTTC = QuantiteValue * PrixUnitaireTTC;
+                decimal MontantTTC = QuantiteValue * PrixUnitaireTTC;
 
                 // Assign values to properties of the LigneFacture object
                 ligneFacture.Produit = produitValue.ToString();
@@ -90,14 +95,35 @@ namespace application_facture.Forms
             RapportFacture RapportF = new RapportFacture();
 
 
-            
-
+            var convertisseur = ConvertisseurNombreEnLettre.Parametrage
+           .AppliquerUneUnite(Unite.Creer("dinar", "dinars", " millime", "millimes"))
+.ModifierLaVirgule("et")
+           .ValiderLeParametrage();
+            decimal totalMontantTTC = listeLignesFacture.Sum(x => x.MontantTTC);
+            string montantEnLettres = convertisseur.Convertir(totalMontantTTC);
             RapportF.Parameters["Client"].Value = TxtClient.Text;
             RapportF.Parameters["dateemission"].Value = DateTime.Now;
+            RapportF.Parameters["TotalTTC"].Value = listeLignesFacture.Sum(x => x.MontantTTC);
+            RapportF.Parameters["TotalEnChiffre"].Value = montantEnLettres;
             RapportF.DataSource = listeLignesFacture;
-
+     
             ReportPrintTool tool = new ReportPrintTool(RapportF);
-            tool.ShowPreview();
+            RapportF.ShowPreview();
+            // Spécifier les options d'exportation PDF
+            PdfExportOptions options = new PdfExportOptions();
+            options.ShowPrintDialogOnOpen = true; // Afficher la boîte de dialogue d'impression lors de l'ouverture du PDF
+            options.Compressed = true; // Activer la compression du PDF
+
+            // Exportation du rapport vers un fichier PDF sur le bureau
+            string pdfFileName = "RapportFacture1.pdf";
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            string pdfFilePath = Path.Combine(desktopPath, pdfFileName);
+
+            RapportF.ExportToPdf(pdfFilePath, options);
+
+            // Afficher un message pour informer l'utilisateur que le rapport a été exporté avec succès
+            MessageBox.Show("Le rapport a été exporté sur votre bureau sous le nom : " + pdfFileName, "Exportation réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

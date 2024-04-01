@@ -14,8 +14,8 @@ namespace application_facture.Model
         public string Produit { get; set; }
         public int Quantite { get; set; }
         public string  Unite { get; set; }
-        public double PrixUnitaireTTC { get; set; }
-        public double MontantTTC { get; set; }
+        public decimal PrixUnitaireTTC { get; set; }
+        public decimal MontantTTC { get; set; }
         public string MontantString { get; set; }
 
 

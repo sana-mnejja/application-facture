@@ -157,6 +157,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ClassLibrairies\ConvertisseurNombreEnLettre-master\ConvertisseurChiffreEnLettre\ConvertisseurNombreEnLettre.csproj">
+      <Project>{3744117f-753a-4594-88dc-8cd0ea8ffb8a}</Project>
+      <Name>ConvertisseurNombreEnLettre</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
