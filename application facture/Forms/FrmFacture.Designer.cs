@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacture));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -48,6 +49,8 @@
             this.colProduit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaireTTC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColSupprimer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -73,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -214,6 +218,8 @@
             this.gridControl1.Location = new System.Drawing.Point(16, 16);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonDelete});
             this.gridControl1.Size = new System.Drawing.Size(579, 354);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -228,7 +234,8 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colProduit,
             this.colQuantite,
-            this.colPrixUnitaireTTC});
+            this.colPrixUnitaireTTC,
+            this.ColSupprimer});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -240,10 +247,11 @@
             // 
             this.colProduit.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colProduit.AppearanceCell.Options.UseFont = true;
-            this.colProduit.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colProduit.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colProduit.AppearanceHeader.Options.UseFont = true;
             this.colProduit.Caption = "Désignation";
             this.colProduit.FieldName = "Produit";
+            this.colProduit.MaxWidth = 100;
             this.colProduit.Name = "colProduit";
             this.colProduit.Visible = true;
             this.colProduit.VisibleIndex = 0;
@@ -252,25 +260,46 @@
             // 
             this.colQuantite.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colQuantite.AppearanceCell.Options.UseFont = true;
-            this.colQuantite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colQuantite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colQuantite.AppearanceHeader.Options.UseFont = true;
             this.colQuantite.Caption = "Quantité";
+            this.colQuantite.DisplayFormat.FormatString = "f0";
+            this.colQuantite.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colQuantite.FieldName = "Quantite";
+            this.colQuantite.MaxWidth = 100;
             this.colQuantite.Name = "colQuantite";
             this.colQuantite.Visible = true;
-            this.colQuantite.VisibleIndex = 1;
+            this.colQuantite.VisibleIndex = 2;
             // 
             // colPrixUnitaireTTC
             // 
             this.colPrixUnitaireTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrixUnitaireTTC.AppearanceCell.Options.UseFont = true;
-            this.colPrixUnitaireTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPrixUnitaireTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrixUnitaireTTC.AppearanceHeader.Options.UseFont = true;
             this.colPrixUnitaireTTC.Caption = "Prix U TTC";
             this.colPrixUnitaireTTC.FieldName = "PrixUnitaireTTC";
             this.colPrixUnitaireTTC.Name = "colPrixUnitaireTTC";
             this.colPrixUnitaireTTC.Visible = true;
-            this.colPrixUnitaireTTC.VisibleIndex = 2;
+            this.colPrixUnitaireTTC.VisibleIndex = 1;
+            // 
+            // ColSupprimer
+            // 
+            this.ColSupprimer.ColumnEdit = this.repositoryItemButtonDelete;
+            this.ColSupprimer.Name = "ColSupprimer";
+            this.ColSupprimer.OptionsColumn.ReadOnly = true;
+            this.ColSupprimer.Visible = true;
+            this.ColSupprimer.VisibleIndex = 3;
+            // 
+            // repositoryItemButtonDelete
+            // 
+            this.repositoryItemButtonDelete.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.repositoryItemButtonDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositoryItemButtonDelete.Name = "repositoryItemButtonDelete";
+            this.repositoryItemButtonDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonDelete.Click += new System.EventHandler(this.repositoryItemButtonDelete_Click);
             // 
             // layoutControlGroup3
             // 
@@ -365,6 +394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -401,5 +431,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton BtnFacture;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn ColSupprimer;
     }
 }

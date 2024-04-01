@@ -124,5 +124,10 @@ namespace application_facture.Forms
             MessageBox.Show("Le rapport a été exporté sur votre bureau sous le nom : " + pdfFileName, "Exportation réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        private void repositoryItemButtonDelete_Click(object sender, EventArgs e)
+        {
+            gridView1.DeleteSelectedRows();
+        }
     }
 }
