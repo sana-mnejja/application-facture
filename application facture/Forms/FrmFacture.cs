@@ -69,8 +69,7 @@ namespace application_facture.Forms
                 object produitValue = gridView1.GetRowCellValue(i, "Produit");
                 // Cast the value of the "Quantite" column to an int
                 int QuantiteValue = (int)gridView1.GetRowCellValue(i, "Quantite");
-                // Retrieve the value of the "Unite" column
-                object Unite = gridView1.GetRowCellValue(i,"Unite");
+ 
                 // Cast the value of the "PrixUnitaireTTC" column to a double
                 decimal PrixUnitaireTTC = (decimal)gridView1.GetRowCellValue(i, "PrixUnitaireTTC");
                 // Calculate the total amount including tax
@@ -79,7 +78,7 @@ namespace application_facture.Forms
                 // Assign values to properties of the LigneFacture object
                 ligneFacture.Produit = produitValue.ToString();
                 ligneFacture.Quantite = QuantiteValue;
-                ligneFacture.Unite = Unite.ToString(); ;
+             
                 ligneFacture.PrixUnitaireTTC = PrixUnitaireTTC;
                 ligneFacture.MontantTTC = MontantTTC;
 

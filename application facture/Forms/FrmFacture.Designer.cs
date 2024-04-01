@@ -47,7 +47,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProduit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUnite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaireTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -229,7 +228,6 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colProduit,
             this.colQuantite,
-            this.colUnite,
             this.colPrixUnitaireTTC});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -240,6 +238,10 @@
             // 
             // colProduit
             // 
+            this.colProduit.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colProduit.AppearanceCell.Options.UseFont = true;
+            this.colProduit.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colProduit.AppearanceHeader.Options.UseFont = true;
             this.colProduit.Caption = "Désignation";
             this.colProduit.FieldName = "Produit";
             this.colProduit.Name = "colProduit";
@@ -248,27 +250,27 @@
             // 
             // colQuantite
             // 
+            this.colQuantite.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colQuantite.AppearanceCell.Options.UseFont = true;
+            this.colQuantite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colQuantite.AppearanceHeader.Options.UseFont = true;
             this.colQuantite.Caption = "Quantité";
             this.colQuantite.FieldName = "Quantite";
             this.colQuantite.Name = "colQuantite";
             this.colQuantite.Visible = true;
             this.colQuantite.VisibleIndex = 1;
             // 
-            // colUnite
-            // 
-            this.colUnite.Caption = "Unité";
-            this.colUnite.FieldName = "Unite";
-            this.colUnite.Name = "colUnite";
-            this.colUnite.Visible = true;
-            this.colUnite.VisibleIndex = 2;
-            // 
             // colPrixUnitaireTTC
             // 
+            this.colPrixUnitaireTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPrixUnitaireTTC.AppearanceCell.Options.UseFont = true;
+            this.colPrixUnitaireTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPrixUnitaireTTC.AppearanceHeader.Options.UseFont = true;
             this.colPrixUnitaireTTC.Caption = "Prix U TTC";
             this.colPrixUnitaireTTC.FieldName = "PrixUnitaireTTC";
             this.colPrixUnitaireTTC.Name = "colPrixUnitaireTTC";
             this.colPrixUnitaireTTC.Visible = true;
-            this.colPrixUnitaireTTC.VisibleIndex = 3;
+            this.colPrixUnitaireTTC.VisibleIndex = 2;
             // 
             // layoutControlGroup3
             // 
@@ -395,7 +397,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colProduit;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantite;
-        private DevExpress.XtraGrid.Columns.GridColumn colUnite;
         private DevExpress.XtraGrid.Columns.GridColumn colPrixUnitaireTTC;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton BtnFacture;
