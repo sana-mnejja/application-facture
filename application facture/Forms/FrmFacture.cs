@@ -80,7 +80,7 @@ namespace application_facture.Forms
                 ligneFacture.Quantite = QuantiteValue;
              
                 ligneFacture.PrixUnitaireTTC = PrixUnitaireTTC;
-                ligneFacture.MontantTTC = MontantTTC;
+             
 
                 // Add the LigneFacture object to the list
                 listeLignesFacture.Add(ligneFacture);

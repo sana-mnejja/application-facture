@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,13 @@ namespace application_facture.Model
         public int Quantite { get; set; }
         public string  Unite { get; set; }
         public decimal PrixUnitaireTTC { get; set; }
-        public decimal MontantTTC { get; set; }
+
         public string MontantString { get; set; }
 
 
-       
-       
+        [Required]
+        public decimal MontantTTC { get { return Math.Round(Decimal.Multiply(PrixUnitaireTTC, Quantite)); } }
+
+
     }
 }

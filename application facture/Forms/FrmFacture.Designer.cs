@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacture));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -44,19 +43,21 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProduit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaireTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSupprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.MontantTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.TotalTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -92,7 +93,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(965, 477);
+            this.layoutControl1.Size = new System.Drawing.Size(1079, 600);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -101,7 +102,7 @@
             this.groupControl1.Controls.Add(this.layoutControl2);
             this.groupControl1.Location = new System.Drawing.Point(16, 16);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(933, 445);
+            this.groupControl1.Size = new System.Drawing.Size(1047, 568);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
@@ -111,7 +112,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(2, 25);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(929, 418);
+            this.layoutControl2.Size = new System.Drawing.Size(1043, 541);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -123,7 +124,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.layoutControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(897, 386);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1011, 509);
             this.splitContainerControl1.SplitterPosition = 280;
             this.splitContainerControl1.TabIndex = 5;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -136,7 +137,7 @@
             this.layoutControl4.Location = new System.Drawing.Point(0, 0);
             this.layoutControl4.Name = "layoutControl4";
             this.layoutControl4.Root = this.layoutControlGroup4;
-            this.layoutControl4.Size = new System.Drawing.Size(280, 386);
+            this.layoutControl4.Size = new System.Drawing.Size(280, 509);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
@@ -171,7 +172,7 @@
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup4.Size = new System.Drawing.Size(280, 386);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(280, 509);
             this.layoutControlGroup4.TextVisible = false;
             // 
             // Client
@@ -189,7 +190,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 77);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(254, 283);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(254, 406);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -208,7 +209,7 @@
             this.layoutControl3.Location = new System.Drawing.Point(0, 0);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(611, 386);
+            this.layoutControl3.Size = new System.Drawing.Size(725, 509);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -220,7 +221,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonDelete});
-            this.gridControl1.Size = new System.Drawing.Size(579, 354);
+            this.gridControl1.Size = new System.Drawing.Size(693, 477);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -235,12 +236,14 @@
             this.colProduit,
             this.colQuantite,
             this.colPrixUnitaireTTC,
-            this.ColSupprimer});
+            this.ColSupprimer,
+            this.MontantTTC});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colProduit
@@ -255,6 +258,7 @@
             this.colProduit.Name = "colProduit";
             this.colProduit.Visible = true;
             this.colProduit.VisibleIndex = 0;
+            this.colProduit.Width = 88;
             // 
             // colQuantite
             // 
@@ -270,6 +274,7 @@
             this.colQuantite.Name = "colQuantite";
             this.colQuantite.Visible = true;
             this.colQuantite.VisibleIndex = 2;
+            this.colQuantite.Width = 88;
             // 
             // colPrixUnitaireTTC
             // 
@@ -278,10 +283,13 @@
             this.colPrixUnitaireTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrixUnitaireTTC.AppearanceHeader.Options.UseFont = true;
             this.colPrixUnitaireTTC.Caption = "Prix U TTC";
+            this.colPrixUnitaireTTC.DisplayFormat.FormatString = "f3";
+            this.colPrixUnitaireTTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPrixUnitaireTTC.FieldName = "PrixUnitaireTTC";
             this.colPrixUnitaireTTC.Name = "colPrixUnitaireTTC";
             this.colPrixUnitaireTTC.Visible = true;
             this.colPrixUnitaireTTC.VisibleIndex = 1;
+            this.colPrixUnitaireTTC.Width = 98;
             // 
             // ColSupprimer
             // 
@@ -289,7 +297,8 @@
             this.ColSupprimer.Name = "ColSupprimer";
             this.ColSupprimer.OptionsColumn.ReadOnly = true;
             this.ColSupprimer.Visible = true;
-            this.ColSupprimer.VisibleIndex = 3;
+            this.ColSupprimer.VisibleIndex = 4;
+            this.ColSupprimer.Width = 85;
             // 
             // repositoryItemButtonDelete
             // 
@@ -301,6 +310,25 @@
             this.repositoryItemButtonDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDelete.Click += new System.EventHandler(this.repositoryItemButtonDelete_Click);
             // 
+            // MontantTTC
+            // 
+            this.MontantTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontantTTC.AppearanceCell.Options.UseFont = true;
+            this.MontantTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontantTTC.AppearanceHeader.Options.UseFont = true;
+            this.MontantTTC.Caption = "Montant TTC";
+            this.MontantTTC.DisplayFormat.FormatString = "f3";
+            this.MontantTTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.MontantTTC.FieldName = "MontantTTC";
+            this.MontantTTC.MinWidth = 50;
+            this.MontantTTC.Name = "MontantTTC";
+            this.MontantTTC.OptionsColumn.ReadOnly = true;
+            this.MontantTTC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "MontantTTC", "Total TTC={0:f3}")});
+            this.MontantTTC.Visible = true;
+            this.MontantTTC.VisibleIndex = 3;
+            this.MontantTTC.Width = 200;
+            // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -310,7 +338,7 @@
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup3.Size = new System.Drawing.Size(611, 386);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(725, 509);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem2
@@ -318,7 +346,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(585, 360);
+            this.layoutControlItem2.Size = new System.Drawing.Size(699, 483);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -331,7 +359,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(929, 418);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1043, 541);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem3
@@ -339,7 +367,7 @@
             this.layoutControlItem3.Control = this.splitContainerControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(903, 392);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1017, 515);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -352,7 +380,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(965, 477);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1079, 600);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -360,18 +388,34 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(939, 451);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1053, 574);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // TotalTTC
+            // 
+            this.TotalTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTTC.AppearanceCell.Options.UseFont = true;
+            this.TotalTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTTC.AppearanceHeader.Options.UseFont = true;
+            this.TotalTTC.Caption = "Total TTC";
+            this.TotalTTC.DisplayFormat.FormatString = "F3";
+            this.TotalTTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalTTC.FieldName = "MontantTTC";
+            this.TotalTTC.Name = "TotalTTC";
+            this.TotalTTC.Visible = true;
+            this.TotalTTC.VisibleIndex = 3;
             // 
             // FrmFacture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 477);
+            this.ClientSize = new System.Drawing.Size(1079, 600);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFacture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFacture";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmFacture_FormClosed);
             this.Load += new System.EventHandler(this.FrmFacture_Load);
@@ -433,5 +477,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDelete;
         private DevExpress.XtraGrid.Columns.GridColumn ColSupprimer;
+        private DevExpress.XtraGrid.Columns.GridColumn MontantTTC;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalTTC;
     }
 }
