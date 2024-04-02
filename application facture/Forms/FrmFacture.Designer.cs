@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacture));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -43,7 +44,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource();
+            this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProduit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -250,7 +251,7 @@
             // 
             this.colProduit.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colProduit.AppearanceCell.Options.UseFont = true;
-            this.colProduit.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colProduit.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colProduit.AppearanceHeader.Options.UseFont = true;
             this.colProduit.Caption = "Désignation";
             this.colProduit.FieldName = "Produit";
@@ -264,7 +265,7 @@
             // 
             this.colQuantite.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colQuantite.AppearanceCell.Options.UseFont = true;
-            this.colQuantite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colQuantite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colQuantite.AppearanceHeader.Options.UseFont = true;
             this.colQuantite.Caption = "Quantité";
             this.colQuantite.DisplayFormat.FormatString = "f0";
@@ -280,7 +281,7 @@
             // 
             this.colPrixUnitaireTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrixUnitaireTTC.AppearanceCell.Options.UseFont = true;
-            this.colPrixUnitaireTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPrixUnitaireTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrixUnitaireTTC.AppearanceHeader.Options.UseFont = true;
             this.colPrixUnitaireTTC.Caption = "Prix U TTC";
             this.colPrixUnitaireTTC.DisplayFormat.FormatString = "f3";
@@ -314,7 +315,7 @@
             // 
             this.MontantTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MontantTTC.AppearanceCell.Options.UseFont = true;
-            this.MontantTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontantTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MontantTTC.AppearanceHeader.Options.UseFont = true;
             this.MontantTTC.Caption = "Montant TTC";
             this.MontantTTC.DisplayFormat.FormatString = "f3";
@@ -416,7 +417,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFacture";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmFacture";
+            this.Text = "Facture";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmFacture_FormClosed);
             this.Load += new System.EventHandler(this.FrmFacture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

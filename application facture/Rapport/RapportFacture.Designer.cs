@@ -381,7 +381,7 @@
             // 
             this.xrTableCell19.BackColor = System.Drawing.Color.Transparent;
             this.xrTableCell19.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding(this.TotalTTC, "Text", "")});
+            new DevExpress.XtraReports.UI.XRBinding(this.TotalTTC, "Text", "{0:#.000}")});
             this.xrTableCell19.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.StylePriority.UseBackColor = false;
