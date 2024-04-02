@@ -153,6 +153,9 @@ namespace application_facture.Forms
             gridView1.DeleteSelectedRows();
         }
 
-       
+        private void btnDEVIS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

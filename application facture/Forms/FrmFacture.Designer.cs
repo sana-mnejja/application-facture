@@ -40,12 +40,14 @@ namespace application_facture.Forms
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDEVIS = new DevExpress.XtraEditors.SimpleButton();
             this.BtnFacture = new DevExpress.XtraEditors.SimpleButton();
             this.TxtClient = new System.Windows.Forms.TextBox();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.Client = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -80,6 +82,7 @@ namespace application_facture.Forms
             ((System.ComponentModel.ISupportInitialize)(this.Client)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -141,6 +144,7 @@ namespace application_facture.Forms
             // 
             // layoutControl4
             // 
+            this.layoutControl4.Controls.Add(this.btnDEVIS);
             this.layoutControl4.Controls.Add(this.BtnFacture);
             this.layoutControl4.Controls.Add(this.TxtClient);
             this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,6 +154,19 @@ namespace application_facture.Forms
             this.layoutControl4.Size = new System.Drawing.Size(280, 509);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
+            // 
+            // btnDEVIS
+            // 
+            this.btnDEVIS.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDEVIS.Appearance.Options.UseFont = true;
+            this.btnDEVIS.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnDEVIS.Location = new System.Drawing.Point(16, 93);
+            this.btnDEVIS.Name = "btnDEVIS";
+            this.btnDEVIS.Size = new System.Drawing.Size(248, 40);
+            this.btnDEVIS.StyleController = this.layoutControl4;
+            this.btnDEVIS.TabIndex = 6;
+            this.btnDEVIS.Text = "Devis PDF";
+            this.btnDEVIS.Click += new System.EventHandler(this.btnDEVIS_Click);
             // 
             // BtnFacture
             // 
@@ -178,7 +195,8 @@ namespace application_facture.Forms
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.Client,
             this.emptySpaceItem1,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.OptionsItemText.TextToControlDistance = 4;
@@ -198,9 +216,9 @@ namespace application_facture.Forms
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 77);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 123);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(254, 406);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(254, 360);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -211,6 +229,15 @@ namespace application_facture.Forms
             this.layoutControlItem4.Size = new System.Drawing.Size(254, 46);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btnDEVIS;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 77);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(254, 46);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControl3
             // 
@@ -261,11 +288,15 @@ namespace application_facture.Forms
             // 
             // Unite
             // 
+            this.Unite.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Unite.AppearanceCell.Options.UseFont = true;
+            this.Unite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Unite.AppearanceHeader.Options.UseFont = true;
             this.Unite.Caption = "Unité";
             this.Unite.FieldName = "Unite";
             this.Unite.Name = "Unite";
             this.Unite.Visible = true;
-            this.Unite.VisibleIndex = 0;
+            this.Unite.VisibleIndex = 2;
             // 
             // colProduit
             // 
@@ -278,7 +309,7 @@ namespace application_facture.Forms
             this.colProduit.MaxWidth = 100;
             this.colProduit.Name = "colProduit";
             this.colProduit.Visible = true;
-            this.colProduit.VisibleIndex = 1;
+            this.colProduit.VisibleIndex = 0;
             this.colProduit.Width = 88;
             // 
             // colQuantite
@@ -309,7 +340,7 @@ namespace application_facture.Forms
             this.colPrixUnitaireTTC.FieldName = "PrixUnitaireTTC";
             this.colPrixUnitaireTTC.Name = "colPrixUnitaireTTC";
             this.colPrixUnitaireTTC.Visible = true;
-            this.colPrixUnitaireTTC.VisibleIndex = 2;
+            this.colPrixUnitaireTTC.VisibleIndex = 1;
             this.colPrixUnitaireTTC.Width = 98;
             // 
             // ColSupprimer
@@ -486,6 +517,7 @@ namespace application_facture.Forms
             ((System.ComponentModel.ISupportInitialize)(this.Client)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -537,5 +569,7 @@ namespace application_facture.Forms
         private DevExpress.XtraGrid.Columns.GridColumn Unite;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemUnite;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraEditors.SimpleButton btnDEVIS;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
