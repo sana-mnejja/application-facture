@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ApplicationContext.cs" />
+    <Compile Include="Model\Enum\EnumUnite.cs" />
     <Compile Include="Model\Facture.cs" />
     <Compile Include="Model\LigneFacture.cs" />
     <Compile Include="Program.cs" />

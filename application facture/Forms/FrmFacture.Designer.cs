@@ -1,4 +1,6 @@
-﻿namespace application_facture.Forms
+﻿using DevExpress.XtraEditors.Repository;
+
+namespace application_facture.Forms
 {
     partial class FrmFacture
     {
@@ -27,10 +29,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
+        {            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacture));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -46,12 +50,15 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Unite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProduit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaireTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSupprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.MontantTTC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemUnite = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -79,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUnite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -221,7 +230,9 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonDelete});
+            this.repositoryItemButtonDelete,
+            this.repositoryItemUnite,
+            this.repositoryItemComboBox1});
             this.gridControl1.Size = new System.Drawing.Size(693, 477);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -234,6 +245,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Unite,
             this.colProduit,
             this.colQuantite,
             this.colPrixUnitaireTTC,
@@ -247,6 +259,14 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // Unite
+            // 
+            this.Unite.Caption = "Unité";
+            this.Unite.FieldName = "Unite";
+            this.Unite.Name = "Unite";
+            this.Unite.Visible = true;
+            this.Unite.VisibleIndex = 0;
+            // 
             // colProduit
             // 
             this.colProduit.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,7 +278,7 @@
             this.colProduit.MaxWidth = 100;
             this.colProduit.Name = "colProduit";
             this.colProduit.Visible = true;
-            this.colProduit.VisibleIndex = 0;
+            this.colProduit.VisibleIndex = 1;
             this.colProduit.Width = 88;
             // 
             // colQuantite
@@ -274,7 +294,7 @@
             this.colQuantite.MaxWidth = 100;
             this.colQuantite.Name = "colQuantite";
             this.colQuantite.Visible = true;
-            this.colQuantite.VisibleIndex = 2;
+            this.colQuantite.VisibleIndex = 3;
             this.colQuantite.Width = 88;
             // 
             // colPrixUnitaireTTC
@@ -289,7 +309,7 @@
             this.colPrixUnitaireTTC.FieldName = "PrixUnitaireTTC";
             this.colPrixUnitaireTTC.Name = "colPrixUnitaireTTC";
             this.colPrixUnitaireTTC.Visible = true;
-            this.colPrixUnitaireTTC.VisibleIndex = 1;
+            this.colPrixUnitaireTTC.VisibleIndex = 2;
             this.colPrixUnitaireTTC.Width = 98;
             // 
             // ColSupprimer
@@ -298,7 +318,7 @@
             this.ColSupprimer.Name = "ColSupprimer";
             this.ColSupprimer.OptionsColumn.ReadOnly = true;
             this.ColSupprimer.Visible = true;
-            this.ColSupprimer.VisibleIndex = 4;
+            this.ColSupprimer.VisibleIndex = 5;
             this.ColSupprimer.Width = 85;
             // 
             // repositoryItemButtonDelete
@@ -327,8 +347,41 @@
             this.MontantTTC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "MontantTTC", "Total TTC={0:f3}")});
             this.MontantTTC.Visible = true;
-            this.MontantTTC.VisibleIndex = 3;
+            this.MontantTTC.VisibleIndex = 4;
             this.MontantTTC.Width = 200;
+            // 
+            // repositoryItemUnite
+            // 
+            this.repositoryItemUnite.AutoHeight = false;
+            this.repositoryItemUnite.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            simpleContextButton1.Id = new System.Guid("0aed6fa9-90bd-431e-bf3a-7eb1aa938311");
+            simpleContextButton1.Name = "1";
+            simpleContextButton1.Tag = "";
+            simpleContextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton2.Id = new System.Guid("676fa456-c875-47fb-8165-b43047576250");
+            simpleContextButton2.Name = "2";
+            simpleContextButton2.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton3.Id = new System.Guid("e8f563da-364e-4995-97c1-ac87c618e7ba");
+            simpleContextButton3.Name = "3";
+            simpleContextButton3.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            this.repositoryItemUnite.ContextButtons.Add(simpleContextButton1);
+            this.repositoryItemUnite.ContextButtons.Add(simpleContextButton2);
+            this.repositoryItemUnite.ContextButtons.Add(simpleContextButton3);
+            this.repositoryItemUnite.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemUnite.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemUnite.Name = "repositoryItemUnite";
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Items.AddRange(new object[] {
+            "Item 1",
+            "Item 2",
+            "Item 3"});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // layoutControlGroup3
             // 
@@ -419,7 +472,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facture";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmFacture_FormClosed);
-            this.Load += new System.EventHandler(this.FrmFacture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -440,6 +492,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUnite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -480,5 +534,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColSupprimer;
         private DevExpress.XtraGrid.Columns.GridColumn MontantTTC;
         private DevExpress.XtraGrid.Columns.GridColumn TotalTTC;
+        private DevExpress.XtraGrid.Columns.GridColumn Unite;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemUnite;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
     }
 }

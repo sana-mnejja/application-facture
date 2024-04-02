@@ -1,4 +1,5 @@
 ﻿
+using application_facture.Model.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,7 +15,7 @@ namespace application_facture.Model
         public int Id { get; set; }
         public string Produit { get; set; }
         public int Quantite { get; set; }
-        public string  Unite { get; set; }
+        public EnumUnite Unite { get; set; }
         public decimal PrixUnitaireTTC { get; set; }
 
         public string MontantString { get; set; }
