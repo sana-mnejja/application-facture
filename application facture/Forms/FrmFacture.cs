@@ -234,10 +234,10 @@ namespace application_facture.Forms
                 options.ShowPrintDialogOnOpen = true; // Afficher la boîte de dialogue d'impression lors de l'ouverture du PDF
                 options.Compressed = true; // Activer la compression du PDF
 
-                // Exportation du rapport vers un fichier PDF sur le bureau
                 string pdfFileName = "RapportDevis.pdf"+ TxtClient.Text;
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                 string pdfFilePath = Path.Combine(desktopPath, pdfFileName);
+                // Exportation du rapport vers un fichier PDF sur le bureau
 
                 RapportF.ExportToPdf(pdfFilePath, options);
 
@@ -245,6 +245,11 @@ namespace application_facture.Forms
                 MessageBox.Show("Le rapport a été exporté sur votre bureau sous le nom : " + pdfFileName, "Exportation réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+
+        }
+
+        private void FrmFacture_Load_1(object sender, EventArgs e)
+        {
 
         }
     }

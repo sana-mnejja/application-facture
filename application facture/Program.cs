@@ -17,7 +17,7 @@ namespace application_facture
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFacture());
+            Application.Run(new FrmAccueil());
         }
     }
 }

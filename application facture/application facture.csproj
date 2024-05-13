@@ -84,17 +84,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acceuil.Designer.cs">
+      <DependentUpon>Acceuil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAccueil.Designer.cs">
+      <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmFacture.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmFacture.Designer.cs">
       <DependentUpon>FrmFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWaitForm1.Designer.cs">
+      <DependentUpon>FrmWaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainRibbonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainRibbonForm.Designer.cs">
+      <DependentUpon>MainRibbonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202403290958264_init.cs" />
     <Compile Include="Migrations\202403290958264_init.designer.cs">
@@ -127,8 +151,15 @@
     <Compile Include="Rapport\RapportFacture.Designer.cs">
       <DependentUpon>RapportFacture.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FrmAccueil.resx">
+      <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmFacture.resx">
       <DependentUpon>FrmFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWaitForm1.resx" />
+    <EmbeddedResource Include="MainRibbonForm.resx">
+      <DependentUpon>MainRibbonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403290958264_init.resx">
       <DependentUpon>202403290958264_init.cs</DependentUpon>
