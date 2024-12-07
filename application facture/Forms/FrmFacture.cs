@@ -17,6 +17,7 @@ using Convertisseur.Entite;
 using DevExpress.XtraPrinting;
 using System.IO;
 using application_facture.Model.Enum;
+using Convertisseur;
 
 namespace application_facture.Forms
 {
@@ -121,11 +122,11 @@ namespace application_facture.Forms
            .AppliquerUneUnite(Convertisseur.Entite.Unite.Creer("dinar", "dinars", " millime", "millimes"))
 .ModifierLaVirgule("et")
            .ValiderLeParametrage();
-            decimal totalMontantTTC = listeLignesFacture.Sum(x => x.MontantTTC);
+            decimal totalMontantTTC = listeLignesFacture.Sum(x => x.PrixUnitaireTTC);
             string montantEnLettres = convertisseur.Convertir(totalMontantTTC);
             RapportF.Parameters["Client"].Value = TxtClient.Text;
             RapportF.Parameters["dateemission"].Value = DateTime.Now;
-            RapportF.Parameters["TotalTTC"].Value = listeLignesFacture.Sum(x => x.MontantTTC);
+            RapportF.Parameters["TotalTTC"].Value = listeLignesFacture.Sum(x => x.PrixUnitaireTTC);
             RapportF.Parameters["TotalEnChiffre"].Value = montantEnLettres;
             RapportF.DataSource = listeLignesFacture;
      
@@ -219,11 +220,11 @@ namespace application_facture.Forms
                .AppliquerUneUnite(Convertisseur.Entite.Unite.Creer("dinar", "dinars", " millime", "millimes"))
     .ModifierLaVirgule("et")
                .ValiderLeParametrage();
-                decimal totalMontantTTC = listeLignesFacture.Sum(x => x.MontantTTC);
+                decimal totalMontantTTC = listeLignesFacture.Sum(x => x.PrixUnitaireTTC);
                 string montantEnLettres = convertisseur.Convertir(totalMontantTTC);
                 RapportF.Parameters["Client"].Value = TxtClient.Text;
                 RapportF.Parameters["dateemission"].Value = DateTime.Now;
-                RapportF.Parameters["TotalTTC"].Value = listeLignesFacture.Sum(x => x.MontantTTC);
+                RapportF.Parameters["TotalTTC"].Value = listeLignesFacture.Sum(x => x.PrixUnitaireTTC);
                 RapportF.Parameters["TotalEnChiffre"].Value = montantEnLettres;
                 RapportF.DataSource = listeLignesFacture;
 
@@ -249,6 +250,11 @@ namespace application_facture.Forms
         }
 
         private void FrmFacture_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl1_Click_1(object sender, EventArgs e)
         {
 
         }

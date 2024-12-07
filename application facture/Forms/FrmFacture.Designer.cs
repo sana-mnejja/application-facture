@@ -52,13 +52,10 @@ namespace application_facture.Forms
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Unite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProduit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colQuantite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaireTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSupprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.MontantTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemUnite = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -272,12 +269,9 @@ namespace application_facture.Forms
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Unite,
             this.colProduit,
-            this.colQuantite,
             this.colPrixUnitaireTTC,
-            this.ColSupprimer,
-            this.MontantTTC});
+            this.ColSupprimer});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -285,19 +279,6 @@ namespace application_facture.Forms
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // Unite
-            // 
-            this.Unite.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Unite.AppearanceCell.Options.UseFont = true;
-            this.Unite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Unite.AppearanceHeader.Options.UseFont = true;
-            this.Unite.Caption = "Unité";
-            this.Unite.FieldName = "Unite";
-            this.Unite.Name = "Unite";
-            this.Unite.Visible = true;
-            this.Unite.VisibleIndex = 2;
-            this.Unite.Width = 59;
             // 
             // colProduit
             // 
@@ -313,22 +294,6 @@ namespace application_facture.Forms
             this.colProduit.Visible = true;
             this.colProduit.VisibleIndex = 0;
             this.colProduit.Width = 300;
-            // 
-            // colQuantite
-            // 
-            this.colQuantite.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colQuantite.AppearanceCell.Options.UseFont = true;
-            this.colQuantite.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colQuantite.AppearanceHeader.Options.UseFont = true;
-            this.colQuantite.Caption = "Quantité";
-            this.colQuantite.DisplayFormat.FormatString = "f0";
-            this.colQuantite.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colQuantite.FieldName = "Quantite";
-            this.colQuantite.MaxWidth = 100;
-            this.colQuantite.Name = "colQuantite";
-            this.colQuantite.Visible = true;
-            this.colQuantite.VisibleIndex = 3;
-            this.colQuantite.Width = 76;
             // 
             // colPrixUnitaireTTC
             // 
@@ -353,7 +318,7 @@ namespace application_facture.Forms
             this.ColSupprimer.Name = "ColSupprimer";
             this.ColSupprimer.OptionsColumn.ReadOnly = true;
             this.ColSupprimer.Visible = true;
-            this.ColSupprimer.VisibleIndex = 5;
+            this.ColSupprimer.VisibleIndex = 2;
             this.ColSupprimer.Width = 28;
             // 
             // repositoryItemButtonDelete
@@ -365,25 +330,6 @@ namespace application_facture.Forms
             this.repositoryItemButtonDelete.Name = "repositoryItemButtonDelete";
             this.repositoryItemButtonDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDelete.Click += new System.EventHandler(this.repositoryItemButtonDelete_Click);
-            // 
-            // MontantTTC
-            // 
-            this.MontantTTC.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MontantTTC.AppearanceCell.Options.UseFont = true;
-            this.MontantTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MontantTTC.AppearanceHeader.Options.UseFont = true;
-            this.MontantTTC.Caption = "Montant TTC";
-            this.MontantTTC.DisplayFormat.FormatString = "f3";
-            this.MontantTTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.MontantTTC.FieldName = "MontantTTC";
-            this.MontantTTC.MinWidth = 50;
-            this.MontantTTC.Name = "MontantTTC";
-            this.MontantTTC.OptionsColumn.ReadOnly = true;
-            this.MontantTTC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "MontantTTC", "Total TTC={0:f3}")});
-            this.MontantTTC.Visible = true;
-            this.MontantTTC.VisibleIndex = 4;
-            this.MontantTTC.Width = 117;
             // 
             // repositoryItemUnite
             // 
@@ -562,16 +508,13 @@ namespace application_facture.Forms
         private System.Windows.Forms.BindingSource ligneFactureBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colProduit;
-        private DevExpress.XtraGrid.Columns.GridColumn colQuantite;
         private DevExpress.XtraGrid.Columns.GridColumn colPrixUnitaireTTC;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton BtnFacture;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDelete;
         private DevExpress.XtraGrid.Columns.GridColumn ColSupprimer;
-        private DevExpress.XtraGrid.Columns.GridColumn MontantTTC;
         private DevExpress.XtraGrid.Columns.GridColumn TotalTTC;
-        private DevExpress.XtraGrid.Columns.GridColumn Unite;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemUnite;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraEditors.SimpleButton btnDEVIS;

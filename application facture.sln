@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.33026.149
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "application facture", "application facture\application facture.csproj", "{469FF043-E58E-4C89-ABFA-FA620CAA6E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertisseurNombreEnLettre", "..\..\ClassLibrairies\ConvertisseurNombreEnLettre-master\ConvertisseurChiffreEnLettre\ConvertisseurNombreEnLettre.csproj", "{3744117F-753A-4594-88DC-8CD0EA8FFB8A}"
-EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{5CDDEAE0-E9DC-420A-BCE6-83B464D9BF1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertisseurNombreEnLettre", "Convertisseur\ConvertisseurNombreEnLettre.csproj", "{3744117F-753A-4594-88DC-8CD0EA8FFB8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,12 @@ Global
 		{469FF043-E58E-4C89-ABFA-FA620CAA6E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{469FF043-E58E-4C89-ABFA-FA620CAA6E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{469FF043-E58E-4C89-ABFA-FA620CAA6E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CDDEAE0-E9DC-420A-BCE6-83B464D9BF1C}.Debug|Any CPU.ActiveCfg = Debug
+		{5CDDEAE0-E9DC-420A-BCE6-83B464D9BF1C}.Release|Any CPU.ActiveCfg = Release
 		{3744117F-753A-4594-88DC-8CD0EA8FFB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3744117F-753A-4594-88DC-8CD0EA8FFB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3744117F-753A-4594-88DC-8CD0EA8FFB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3744117F-753A-4594-88DC-8CD0EA8FFB8A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CDDEAE0-E9DC-420A-BCE6-83B464D9BF1C}.Debug|Any CPU.ActiveCfg = Debug
-		{5CDDEAE0-E9DC-420A-BCE6-83B464D9BF1C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
